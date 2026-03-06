@@ -1,0 +1,5 @@
+**/venv
+.DS_Store
+.env
+mediPath-ml/mediPath_data/raw/*
+mediPath-ml/mediPath_data/processed/*
