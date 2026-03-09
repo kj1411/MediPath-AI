@@ -11,9 +11,9 @@ func SetupRouter(handler *endpoints.PredictHandler) *mux.Router {
 
 	r := mux.NewRouter()
 
-	r.HandleFunc("/predict", handler.Handle).Methods("POST")
-
 	r.Use(middleware.EnableCORS)
+
+	r.HandleFunc("/predict", handler.Handle).Methods("POST", "OPTIONS")
 
 	return r
 }

@@ -1,0 +1,260 @@
+.results-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+  animation: fadeInUp 0.5s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header */
+.results-header {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.results-header h2 {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25rem;
+}
+
+.results-header > p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  background: var(--surface);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 1.25rem;
+}
+
+.back-btn:hover {
+  color: var(--text);
+  border-color: var(--text-muted);
+  background: var(--primary-light);
+}
+
+/* Cards */
+.result-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.result-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+/* Disease Card */
+.disease-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  border-left: 4px solid var(--primary);
+}
+
+.disease-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.disease-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--primary-light), var(--primary-50));
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.card-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+}
+
+.disease-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  margin-top: 0.1rem;
+}
+
+/* Confidence */
+.confidence-badge {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.confidence-bar {
+  height: 8px;
+  background: var(--border);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.confidence-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.confidence-badge.high .confidence-fill {
+  background: linear-gradient(90deg, var(--success), #34d399);
+}
+
+.confidence-badge.medium .confidence-fill {
+  background: linear-gradient(90deg, var(--warning), #fbbf24);
+}
+
+.confidence-badge.low .confidence-fill {
+  background: linear-gradient(90deg, var(--danger), #f87171);
+}
+
+.confidence-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.confidence-badge.high .confidence-text {
+  color: var(--success);
+}
+
+.confidence-badge.medium .confidence-text {
+  color: var(--warning);
+}
+
+.confidence-badge.low .confidence-text {
+  color: var(--danger);
+}
+
+/* Explanation & Routine Cards */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.card-header h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.card-body p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+.card-body p + p {
+  margin-top: 0.75rem;
+}
+
+.explanation-card {
+  border-left: 4px solid var(--accent);
+}
+
+.explanation-card .card-header {
+  color: var(--accent);
+}
+
+.routine-card {
+  border-left: 4px solid #8b5cf6;
+}
+
+.routine-card .card-header {
+  color: #8b5cf6;
+}
+
+/* Disclaimer */
+.disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: var(--warning-light);
+  border: 1px solid #fde68a;
+  border-radius: var(--radius);
+  color: #92400e;
+}
+
+.disclaimer svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.disclaimer p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .results-section {
+    padding: 1.5rem 1rem 2rem;
+  }
+
+  .result-card {
+    padding: 1.25rem;
+  }
+
+  .disease-name {
+    font-size: 1.25rem;
+  }
+
+  .results-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .disease-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+  }
+
+  .disease-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+}
